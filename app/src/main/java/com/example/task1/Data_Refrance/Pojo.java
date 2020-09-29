@@ -3,7 +3,7 @@ package com.example.task1.Data_Refrance;
 import java.util.ArrayList;
 
 public class Pojo {
-    public ArrayList<Class_model> myNumbers()    {
+  /*  public ArrayList<Class_model> myNumbers()    {
         ArrayList<Class_model> strings = new ArrayList<>();
         Class_model name=new Class_model("0","ahmed");
         Class_model name1=new Class_model("1","mohamed");
@@ -16,5 +16,23 @@ public class Pojo {
         strings.add(name3);
         strings.add(name4);
         return strings;
+    }*/
+       //best practice
+    public ArrayList<Class_model> data;
+
+    public Pojo() {
+        data = new ArrayList<>();
+        return_Data();
+    }
+
+    private void return_Data() {
+        data.add(new Class_model("0", "ahmed"));
+        data.add(new Class_model("1", "ahmed"));
+        data.add(new Class_model("2", "ahmed"));
+        data.add(new Class_model("3", "ahmed"));
+    }
+
+    public ArrayList<Class_model> getData() {
+        return data;
     }
 }
