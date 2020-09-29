@@ -17,7 +17,12 @@ public class Main_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_);
         mTextView=findViewById(R.id.name_TExtView);
-        //todo ?? one string to carry all strings
+        
+         for (Class_model model:array.getData()){
+            mTextView.append("id="+model.getId()+"name:"+model.getName());
+        }
+
+     /*   //todo ?? one string to carry all strings
         String content = "" ;
         //todo ?? make for loop to concatenate strings in one string
         for (int i = 0; i <array.myNumbers().size() ; i++) {
@@ -27,7 +32,7 @@ public class Main_Activity extends AppCompatActivity {
             content += "\n" + class_model.getId() +"_"+class_model.getName() ;
         }
         //todo ?? set whole string in text view
-        mTextView.setText(content);
+        mTextView.setText(content);*/
     }
        
 }
