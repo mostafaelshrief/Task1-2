@@ -13,6 +13,8 @@ import com.example.task1.Data_Refrance.Main_Activity;
 import com.example.task1.R;
 
 public class Login_Activity extends AppCompatActivity implements View.OnClickListener {
+    //will be better if you use camle case while named variable
+    //like userPass , userName
     EditText mUsername,mUserpass;
     Button mNextBtn,mSubmitBtn;
     @Override
@@ -31,7 +33,7 @@ public class Login_Activity extends AppCompatActivity implements View.OnClickLis
         mSubmitBtn.setOnClickListener(this);
     }
 
-    @Override
+/*@Override
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.submit_btn:
@@ -59,6 +61,36 @@ public class Login_Activity extends AppCompatActivity implements View.OnClickLis
             }
 
 
+        }*/
+     @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.submit_btn:
+                if (!(mUsername.getText().toString().equals("mostafa@gmail.com")) &&!(mUsername.getText().toString().isEmpty())) {
+                    Toast.makeText(Login_Activity.this, "please check your username", Toast.LENGTH_LONG).show();
+                }
+                /*
+                 else if ((mUsername.getText().toString().isEmpty())){
+                    Toast.makeText(Login_Activity.this, "please don't leave any field empty", Toast.LENGTH_LONG).show();
+                }
+                */
+               /*
+                else if ((mUserpass.getText().toString().isEmpty())) {
+                    Toast.makeText(Login_Activity.this, "please don't leave any field empty", Toast.LENGTH_LONG).show();
+                }*/
+                else if (!(mUserpass.getText().toString().equals("123456789")) && !(mUserpass.getText().toString().isEmpty())) {
+                    Toast.makeText(Login_Activity.this, "please check your password", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(Login_Activity.this, "welcom", Toast.LENGTH_LONG).show();
+                }
+                break;
+            case R.id.next_btn:
+                Intent i = new Intent(Login_Activity.this, Main_Activity.class);
+                startActivity(i);
         }
+
+
+    }
+
 
     }
